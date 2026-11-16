@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuanu Creative City - Redesign Concept</title>
+
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+
+        }
+
+        [id] {
+            scroll-margin-top: 100px;
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #030413;
+
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+
+            background: url('https://www.nuanu.com/_next/image?url=https%3A%2F%2Fadmin.cockpit.nuanu.com%2Fassets%2F0aa79909-46c6-4e29-a2ec-7bde786960ab.webp&w=3840&q=75') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(3, 4, 19, 0.8) 0%, rgba(3, 4, 19, 0.2) 40%, rgba(3, 4, 19, 0.9) 90%, #030413 100%);
+            z-index: 1;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(3, 4, 19, 0.68);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-section,
+        #tiket,
+        #jadwal {
+            scroll-margin-top: 105px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 6px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, #00f2fe, #4facfe);
+
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #00f2fe;
+        }
+
+        .btn-ticket {
+            background: transparent;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 10px 24px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 50px;
+
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-ticket:hover {
+            background: #ffffff;
+            color: #030413;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        .main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .sub-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            letter-spacing: 4px;
+            color: #00f2fe;
+
+            font-weight: 500;
+        }
+
+        .content-section {
+            position: relative;
+            padding: 40px 5% 0 5%;
+            background-color: #030413;
+            z-index: 5;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 0;
+            padding: 10px 5% 100px 5%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #4facfe;
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.2);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+        }
+
+        .card-info {
+            padding: 25px;
+            text-align: left;
+        }
+
+        .card-info h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .card-info p {
+            font-size: 14px;
+            color: #a0a5c3;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            html, body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            .hero-section {
+                width: 100%;
+                min-height: 100svh;
+                height: 100svh;
+                background-position: center center;
+            }
+
+            header {
+                width: 100%;
+                padding: 14px 14px;
+                flex-direction: column;
+                gap: 10px;
+                background: rgba(3, 4, 19, 0.84);
+            }
+
+            .content-section,
+            #tiket,
+            #jadwal {
+                scroll-margin-top: 150px;
+            }
+
+            .nav-links {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 14px 20px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+                letter-spacing: 1.5px;
+                padding-bottom: 4px;
+            }
+
+            .btn-ticket {
+                padding: 9px 18px;
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+
+            .hero-content {
+                width: 100%;
+                padding: 0 20px;
+            }
+
+            .main-title {
+                font-size: clamp(28px, 8vw, 40px);
+                line-height: 1.15;
+                letter-spacing: 3px;
+                margin-bottom: 12px;
+            }
+
+            .sub-title {
+                font-size: 10px;
+                line-height: 1.5;
+                letter-spacing: 2px;
+            }
+
+            .content-section {
+                width: 100%;
+                padding: 40px 20px 0;
+            }
+
+            .section-title {
+                font-size: 24px;
+                line-height: 1.3;
+                letter-spacing: 2px;
+                margin-bottom: 22px;
+            }
+
+            .content-grid {
+                width: 100%;
+                grid-template-columns: 1fr;
+                gap: 24px;
+                margin: 0;
+                padding: 10px 20px 60px;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+            .card-img {
+                width: 100%;
+                height: 190px;
+            }
+
+            .card-info {
+                padding: 20px;
+            }
+
+            .card-info h3 {
+                font-size: 16px;
+            }
+
+            .card-info p {
+                font-size: 13px;
+            }
+        }
+
+    
+        .section-lead {
+            max-width: 760px;
+            margin: -8px auto 34px;
+            color: #a0a5c3;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .card {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card::after {
+            content: 'EXPLORE  →';
+            position: absolute;
+            right: 18px;
+            top: 170px;
+            padding: 6px 10px;
+            border: 1px solid rgba(0, 242, 254, .45);
+            border-radius: 30px;
+            background: rgba(3, 4, 19, .78);
+            color: #00f2fe;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 9px;
+            letter-spacing: 1px;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: .3s ease;
+        }
+
+        .card:hover::after {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .info-section {
+            padding: 90px 5%;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(0,242,254,.08), transparent 30%),
+                radial-gradient(circle at 85% 70%, rgba(79,172,254,.07), transparent 30%),
+                #030413;
+            border-top: 1px solid rgba(255,255,255,.05);
+        }
+
+        .section-heading {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 30px;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .section-kicker {
+            text-align: center;
+            color: #00f2fe;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .experience-grid {
+            max-width: 1100px;
+            margin: 36px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .experience-card {
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 18px;
+            background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+            transition: .3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0,242,254,.5);
+            box-shadow: 0 12px 35px rgba(0,242,254,.09);
+        }
+
+        .experience-icon {
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+
+        .experience-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .experience-card p {
+            color: #a0a5c3;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .ticket-wrap, .schedule-wrap {
+            max-width: 1100px;
+            margin: 36px auto 0;
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(255,255,255,.025);
+            box-shadow: 0 20px 60px rgba(0,0,0,.2);
+        }
+
+        .ticket-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .ticket-table th, .ticket-table td {
+            padding: 18px 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+
+        .ticket-table th {
+            color: #00f2fe;
+            background: rgba(0,242,254,.05);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .ticket-table td {
+            color: #d9dcf0;
+            font-size: 13px;
+        }
+
+        .ticket-table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .price {
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .price.free {
+            color: #00f2fe;
+        }
+
+        .ticket-note {
+            padding: 16px 20px;
+            color: #7f86a8;
+            font-size: 11px;
+            border-top: 1px solid rgba(255,255,255,.07);
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            padding: 22px;
+        }
+
+        .schedule-item {
+            padding: 22px;
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 16px;
+            background: rgba(255,255,255,.025);
+        }
+
+        .schedule-time {
+            color: #00f2fe;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .schedule-item h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .schedule-item p {
+            color: #9298b7;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .open-status {
+            max-width: 1100px;
+            margin: 25px auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 18px 22px;
+            border: 1px solid rgba(0,242,254,.2);
+            border-radius: 15px;
+            background: rgba(0,242,254,.035);
+        }
+
+        .open-status strong {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+        }
+
+        .open-status span {
+            color: #00f2fe;
+            font-size: 12px;
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: none;
+            place-items: center;
+            padding: 20px;
+            background: rgba(0,0,0,.78);
+            backdrop-filter: blur(12px);
+        }
+
+        .modal.show {
+            display: grid;
+        }
+
+        .modal-box {
+            position: relative;
+            width: min(720px, 100%);
+            max-height: 88vh;
+            overflow-y: auto;
+            padding: 34px;
+            border: 1px solid rgba(0,242,254,.3);
+            border-radius: 22px;
+            background: linear-gradient(145deg, #090c24, #030413);
+            box-shadow: 0 30px 100px rgba(0,0,0,.65), 0 0 40px rgba(0,242,254,.08);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 18px;
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 50%;
+            background: rgba(255,255,255,.04);
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .modal-tag {
+            color: #00f2fe;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .modal-box h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 27px;
+            margin-bottom: 14px;
+        }
+
+        .modal-box p {
+            color: #a0a5c3;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .modal-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .modal-feature {
+            padding: 15px;
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 12px;
+            background: rgba(255,255,255,.025);
+        }
+
+        .modal-feature strong {
+            display: block;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            color: #00f2fe;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .modal-feature span {
+            color: #d9dcf0;
+            font-size: 12px;
+        }
+
+        .modal-action {
+            display: inline-flex;
+            margin-top: 24px;
+            padding: 11px 18px;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #00f2fe, #4facfe);
+            color: #030413;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .back-top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 50;
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(0,242,254,.35);
+            border-radius: 50%;
+            background: rgba(3,4,19,.82);
+            color: #00f2fe;
+            cursor: pointer;
+            opacity: .85;
+        }
+
+        @media (max-width: 768px) {
+            .experience-grid,
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-section {
+                padding: 65px 20px;
+            }
+
+            .section-heading {
+                font-size: 23px;
+            }
+
+            .section-lead {
+                font-size: 12px;
+            }
+
+            .ticket-wrap {
+                overflow-x: auto;
+            }
+
+            .ticket-table {
+                min-width: 650px;
+            }
+
+            .open-status {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .modal-box {
+                padding: 28px 22px;
+            }
+
+            .modal-features {
+                grid-template-columns: 1fr;
+            }
+
+            .card::after {
+                top: 160px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="hero-section" id="beranda">
+
+        <header>
+            <ul class="nav-links">
+                <li><a href="#beranda" data-section="beranda" class="active">BERANDA</a></li>
+                <li><a href="#daya-tarik-wisata" data-section="daya-tarik-wisata">DAYA TARIK</a></li>
+                <li><a href="#tiket" data-section="tiket">TIKET</a></li>
+                <li><a href="#jadwal" data-section="jadwal">JADWAL</a></li>
+            </ul>
+            <a href="https://www.nuanu.com/get-ticket" target="_blank" style="text-decoration: none;">
+                <button class="btn-ticket">
+
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z">
+                        </path>
+                        <path d="M13 5v2"></path>
+                        <path d="M13 17v2"></path>
+                        <path d="M13 11v2"></path>
+                    </svg>
+                    PESAN TIKET
+                </button>
+            </a>
+        </header>
+
+        <div class="hero-content">
+            <h1 class="main-title">NUANU CREATIVE CITY</h1>
+            <p class="sub-title">DESA BERABAN - TABANAN - BALI</p>
+        </div>
+    </div>
+
+    <section id="daya-tarik-wisata" class="content-section">
+        <h2 class="section-title">Daya Tarik Wisata</h2>
+<p class="section-lead">Klik setiap destinasi untuk membuka detail pengalaman, waktu pertunjukan, dan hal menarik yang bisa kamu temukan di dalamnya.</p>
+    </section>
+
+    <div class="content-grid">
+
+        <div class="card" onclick="openAttraction('Earth Sentinels')">
+            <div class="card-img"
+                style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZjNwaptnV6AKCRgBpcbaKysALxzHDkp8fE6Kv79VqAynb1d-c15Njz4Aq&s=10') center/cover;">
+            </div>
+            <div class="card-info">
+                <h3>Earth Sentinels</h3>
+                <p>Instalasi patung megah ikonik karya Daniel Popper yang memadukan keajaiban seni dengan pertunjukan
+                    video mapping spektakuler di malam hari.</p>
+            </div>
+        </div>
+
+        <div class="card" onclick="openAttraction('Aurora Park')">
+            <div class="card-img"
+                style="background: url('https://cdn.prod.website-files.com/667e42811eb56c9d30d3f4e0/66c84db8793d7f536f4950ce_DELIVERED.Aurora.Park.13.jpg') center/cover;">
+            </div>
+            <div class="card-info">
+                <h3>Aurora Park</h3>
+                <p>Petualangan visual imersif di dalam hutan buatan yang menggabungkan kecerdasan buatan (AI), sensor
+                    gerak, dan tata lampu multimedia interaktif.</p>
+            </div>
+        </div>
+
+        <div class="card" onclick="openAttraction('Luna Beach Club')">
+            <div class="card-img"
+                style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZWKvaEUJ2KNbhBtRkfmTAhcYfHX74aySh08F4308fle-2zIPOgz0JgayC&s=10') center/cover;">
+            </div>
+            <div class="card-info">
+                <h3>Luna Beach Club</h3>
+                <p>Tempat bersantai premium tepi pantai terintegrasi yang menawarkan pertunjukan musik, instalasi bambu
+                    unik, dan kolam renang tak terbatas.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="pengalaman" class="info-section">
+        <div class="section-kicker">THE NUANU EXPERIENCE</div>
+        <h2 class="section-heading">Lebih Dari Sekadar Tempat</h2>
+        <p class="section-lead">Seni, alam, teknologi, budaya, dan ruang kreatif bertemu dalam satu ekosistem.</p>
+
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div class="experience-icon">✦</div>
+                <h3>ART & INSTALLATION</h3>
+                <p>Temukan instalasi monumental dan karya visual yang dirancang untuk menyatu dengan lanskap Nuanu.</p>
+            </div>
+            <div class="experience-card">
+                <div class="experience-icon">⌁</div>
+                <h3>NATURE & CULTURE</h3>
+                <p>Jelajahi ruang hijau, jalur alam, aktivitas komunitas, serta pengalaman budaya yang terus berganti.</p>
+            </div>
+            <div class="experience-card">
+                <div class="experience-icon">◉</div>
+                <h3>LIGHT & TECHNOLOGY</h3>
+                <p>Saat malam datang, instalasi multimedia dan projection mapping mengubah Nuanu menjadi pengalaman visual.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tiket" class="info-section">
+        <div class="section-kicker">PLAN YOUR VISIT</div>
+        <h2 class="section-heading">Daftar Harga Tiket</h2>
+        <p class="section-lead">Harga di bawah mengikuti daftar tiket yang tampil di situs resmi Nuanu saat halaman ini dibuat.</p>
+
+        <div class="ticket-wrap">
+            <table class="ticket-table">
+                <thead>
+                    <tr>
+                        <th>KATEGORI</th>
+                        <th>KETERANGAN</th>
+                        <th>HARGA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dewasa</td>
+                        <td>Di atas 12 tahun — tiket masuk reguler</td>
+                        <td class="price">Rp50.000</td>
+                    </tr>
+                    <tr>
+                        <td>Anak-anak</td>
+                        <td>Usia 4–12 tahun</td>
+                        <td class="price">Rp20.000</td>
+                    </tr>   
+                    <tr>
+                        <td>Toddler</td>
+                        <td>Usia 0–3 tahun</td>
+                        <td class="price free">GRATIS</td>
+                    </tr>
+                    <tr>
+                        <td>Highlights Tour</td>
+                        <td>Tur buggy berpemandu ±40 menit + entrance</td>
+                        <td class="price">Rp250.000</td>
+                    </tr>
+                    <tr>
+                        <td>Multimedia Tour</td>
+                        <td>Tur jalan kaki malam ±1 jam, mulai 18:30</td>
+                        <td class="price">Rp500.000</td>
+                    </tr>
+                    <tr>
+                        <td>Morning Flash Tour</td>
+                        <td>Tur buggy bersama ±30 menit, 10:00–12:00</td>
+                        <td class="price">Rp150.000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="ticket-note">*Harga dan ketersediaan dapat berubah. Untuk pembelian aktual, gunakan situs resmi Nuanu.</div>
+        </div>
+
+        <div style="text-align:center;">
+            <a class="modal-action" href="https://www.nuanu.com/get-ticket" target="_blank"> CEK TIKET RESMI ↗</a>
+        </div>
+    </section>
+
+    <section id="jadwal" class="info-section">
+        <div class="section-kicker">DAILY PROGRAM</div>
+        <h2 class="section-heading">Jadwal & Jam Operasional</h2>
+        <p class="section-lead">Nuanu Creative City tercatat buka setiap hari. Program tertentu dapat berubah mengikuti kalender acara.</p>
+
+        <div class="open-status">
+            <strong>NUANU CREATIVE CITY</strong>
+            <span>OPEN DAILY · 08:00 — 23:00</span>
+        </div>
+
+        <div class="schedule-wrap">
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <div class="schedule-time">18:30 — 23:00</div>
+                    <h3>Earth Sentinels Projection Mapping</h3>
+                    <p>Projection mapping malam di Popper Triangle.</p>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">18:30 — 23:00</div>
+                    <h3>Multi-Media Installations</h3>
+                    <p>Pengalaman multimedia malam di Aurora Media Park.</p>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">18:40 — 23:00</div>
+                    <h3>THK Tower Light Show</h3>
+                    <p>Pertunjukan cahaya malam di area Luna.</p>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">17:30 — 18:30</div>
+                    <h3>Weekend Cultural Performance</h3>
+                    <p>Program budaya oleh komunitas Beraban pada jadwal akhir pekan yang tercantum di kalender Nuanu.</p>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">15:00 — 17:00</div>
+                    <h3>Selected Kids Programs</h3>
+                    <p>Beberapa kelas dan aktivitas anak berlangsung pada hari tertentu.</p>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">CHECK CALENDAR</div>
+                    <h3>Special Events</h3>
+                    <p>Konser, festival, workshop, dan acara khusus memiliki jadwal serta tiket tersendiri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding:45px 20px;text-align:center;background:#02030e;border-top:1px solid rgba(255,255,255,.06);">
+        <div style="font-family:'Orbitron',sans-serif;letter-spacing:3px;font-size:15px;">NUANU CREATIVE CITY</div>
+        <p style="margin-top:10px;color:#737a9a;font-size:11px;">DESA BERABAN · TABANAN · BALI</p>
+    </footer>
+
+    <div id="attractionModal" class="modal" onclick="closeAttraction(event)">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeAttraction()">×</button>
+            <div id="modalTag" class="modal-tag"></div>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <div id="modalFeatures" class="modal-features"></div>
+            <a id="modalAction" class="modal-action" href="https://www.nuanu.com/visit" target="_blank">LIHAT INFO NUANU ↗</a>
+        </div>
+    </div>
+
+    <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Kembali ke atas">↑</button>
+
+    <script>
+        const attractionData = {
+            "Earth Sentinels": {
+                tag: "ART · LANDMARK · NIGHT",
+                description: "Instalasi monumental yang menjadi salah satu ikon Nuanu. Pada malam hari, Earth Sentinels menjadi bagian dari pengalaman projection mapping yang berlangsung di Popper Triangle.",
+                features: [
+                    ["SHOW", "18:30 — 23:00"],
+                    ["LOCATION", "Popper Triangle"],
+                    ["EXPERIENCE", "Projection Mapping"],
+                    ["IDEA", "Seni + cahaya + lanskap"]
+                ]
+            },
+            "Aurora Park": {
+                tag: "MULTIMEDIA · NATURE",
+                description: "Ruang pengalaman di sepanjang area riverside yang memadukan instalasi, multimedia, alam, dan suasana malam. Cocok untuk menikmati transformasi Nuanu setelah matahari terbenam.",
+                features: [
+                    ["SHOW", "18:30 — 23:00"],
+                    ["LOCATION", "Aurora Media Park"],
+                    ["EXPERIENCE", "Multimedia Installation"],
+                    ["ATMOSPHERE", "Nature + Light"]
+                ]
+            },
+            "Luna Beach Club": {
+                tag: "BEACH · LIFESTYLE · NIGHT",
+                description: "Area lifestyle tepi pantai di dalam ekosistem Nuanu yang menjadi lokasi berbagai pengalaman, hiburan, dan event. Jadwal acara dapat berubah mengikuti kalender.",
+                features: [
+                    ["LIGHT SHOW", "18:40 — 23:00"],
+                    ["LOCATION", "Luna"],
+                    ["EXPERIENCE", "Lifestyle + Entertainment"],
+                    ["EVENTS", "Cek kalender acara"]
+                ]
+            }
+        };
+
+        function openAttraction(name) {
+            const data = attractionData[name];
+            if (!data) return;
+
+            document.getElementById("modalTag").textContent = data.tag;
+            document.getElementById("modalTitle").textContent = name;
+            document.getElementById("modalDescription").textContent = data.description;
+
+            document.getElementById("modalFeatures").innerHTML = data.features.map(item =>
+                `<div class="modal-feature"><strong>${item[0]}</strong><span>${item[1]}</span></div>`
+            ).join("");
+
+            document.getElementById("attractionModal").classList.add("show");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeAttraction(event) {
+            if (event && event.target !== document.getElementById("attractionModal")) return;
+            document.getElementById("attractionModal").classList.remove("show");
+            document.body.style.overflow = "";
+        }
+
+        // Saat pengguna mengscroll slide web, tombol navigasi navbar akan ikut mengikuti slide
+        const navLinks = Array.from(document.querySelectorAll(".nav-links a[data-section]"));
+        const navSections = [
+            document.getElementById("beranda"),
+            document.getElementById("daya-tarik-wisata"),
+            document.getElementById("tiket"),
+            document.getElementById("jadwal")
+        ].filter(Boolean);
+
+        let programmaticNav = null;
+        let navAnimationFrame = null;
+        let navSafetyTimer = null;
+
+        function setActiveNav(sectionId) {
+            navLinks.forEach(link => {
+                link.classList.toggle("active", link.dataset.section === sectionId);
+            });
+        }
+
+        function getHeaderHeight() {
+            const header = document.querySelector("header");
+            return header ? header.offsetHeight : 0;
+        }
+
+        function getTargetScroll(section) {
+            const headerHeight = getHeaderHeight();
+            const absoluteTop = section.getBoundingClientRect().top + window.scrollY;
+            return Math.max(0, Math.round(absoluteTop - headerHeight - 2));
+        }
+
+        function getActiveSectionId() {
+            const marker = window.scrollY + getHeaderHeight() + 22;
+            let activeId = navSections[0]?.id || null;
+
+            for (const section of navSections) {
+                if (section.offsetTop <= marker) {
+                    activeId = section.id;
+                } else {
+                    break;
+                }
+            }
+
+            return activeId;
+        }
+
+        function updateActiveNav() {
+            if (programmaticNav) {
+                setActiveNav(programmaticNav.sectionId);
+
+                const distance = Math.abs(window.scrollY - programmaticNav.target);
+
+                // Jangan lepas garis dibawah sebelum smooth-scroll benar-benar tiba.
+                if (distance <= 5) {
+                    programmaticNav = null;
+                    clearTimeout(navSafetyTimer);
+                    navSafetyTimer = null;
+                    setActiveNav(getActiveSectionId());
+                    return;
+                }
+
+                return;
+            }
+
+            setActiveNav(getActiveSectionId());
+        }
+
+        function finishProgrammaticNav() {
+            if (!programmaticNav) return;
+
+            const sectionId = programmaticNav.sectionId;
+            programmaticNav = null;
+            clearTimeout(navSafetyTimer);
+            navSafetyTimer = null;
+
+            // Prioritaskan menu yang baru dipilih, lalu sinkronkan
+            // berdasarkan posisi akhir halaman.
+            setActiveNav(sectionId);
+            requestAnimationFrame(() => {
+                setActiveNav(getActiveSectionId());
+            });
+        }
+
+        function cancelProgrammaticNav() {
+            if (!programmaticNav) return;
+
+            programmaticNav = null;
+            clearTimeout(navSafetyTimer);
+            navSafetyTimer = null;
+            updateActiveNav();
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", function(event) {
+                const sectionId = this.dataset.section;
+                const section = document.getElementById(sectionId);
+                if (!section) return;
+
+                event.preventDefault();
+
+                clearTimeout(navSafetyTimer);
+
+                const target = getTargetScroll(section);
+
+                // Garis biru ikutan pindah-pindah saat tombol ditekan.
+                setActiveNav(sectionId);
+
+                programmaticNav = {
+                    sectionId,
+                    target
+                };
+
+                history.pushState(null, "", "#" + sectionId);
+
+                window.scrollTo({
+                    top: target,
+                    behavior: "smooth"
+                });
+
+                // Safety net: jauh lebih panjang dari durasi smooth-scroll normal,
+                // sehingga garis tidak kembali ke menu lama terlalu cepat.
+                navSafetyTimer = setTimeout(() => {
+                    finishProgrammaticNav();
+                }, 3500);
+            });
+        });
+
+        // Kalau user benar-benar mulai menggeser sendiri saat smooth-scroll,
+        // batalkan kunci agar navbar kembali mengikuti posisi aktual.
+        window.addEventListener("wheel", cancelProgrammaticNav, { passive: true });
+        window.addEventListener("touchstart", cancelProgrammaticNav, { passive: true });
+
+        // Browser yang mendukung scrollend bisa langsung membuka kunci
+        // begitu animasi scroll selesai.
+        if ("onscrollend" in window) {
+            window.addEventListener("scrollend", () => {
+                finishProgrammaticNav();
+            });
+        }
+
+        window.addEventListener("scroll", function() {
+            if (navAnimationFrame) return;
+
+            navAnimationFrame = window.requestAnimationFrame(() => {
+                updateActiveNav();
+                navAnimationFrame = null;
+            });
+        }, { passive: true });
+
+        window.addEventListener("resize", function() {
+            if (programmaticNav) {
+                const section = document.getElementById(programmaticNav.sectionId);
+                if (section) {
+                    programmaticNav.target = getTargetScroll(section);
+                }
+                setActiveNav(programmaticNav.sectionId);
+            } else {
+                updateActiveNav();
+            }
+        });
+
+        window.addEventListener("load", () => {
+            const initialHash = window.location.hash.replace("#", "");
+
+            if (initialHash && navSections.some(section => section.id === initialHash)) {
+                setActiveNav(initialHash);
+
+                // Setelah browser selesai memposisikan halaman berdasarkan hash,
+                // sinkronkan lagi tanpa mengubah pilihan secara prematur.
+                requestAnimationFrame(() => {
+                    setActiveNav(getActiveSectionId());
+                });
+            } else {
+                updateActiveNav();
+            }
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                document.getElementById("attractionModal").classList.remove("show");
+                document.body.style.overflow = "";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
